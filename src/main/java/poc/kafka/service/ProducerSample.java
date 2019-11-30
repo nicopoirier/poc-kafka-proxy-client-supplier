@@ -31,10 +31,10 @@ public class ProducerSample {
         listCar.add(Car.builder().name("BMW M3 1998").model("M3").generation("E36").year("1998").priceMin(10000).priceMax(27000).carTechnical(CarTechnical.builder().coupleEngine("320").cylinder("2990").nbOfCylinder(6).powerHP("286").build()).build());
         listCar.add(Car.builder().name("BMW M3 2002").model("M3").generation("E46").year("2002").priceMin(30000).priceMax(35000).carTechnical(CarTechnical.builder().coupleEngine("365").cylinder("3246").nbOfCylinder(6).powerHP("343").build()).build());
         listCar.add(Car.builder().name("BMW M3 2010").model("M3").generation("E90").year("2010").priceMin(10000).priceMax(51000).carTechnical(CarTechnical.builder().coupleEngine("400").cylinder("3999").nbOfCylinder(8).powerHP("420").build()).build());
-        listCar.add( Car.builder().name("BMW M3 2011").model("M3").generation("E92").year("2011").priceMin(15000).priceMax(52000).carTechnical(CarTechnical.builder().coupleEngine("400").cylinder("3999").nbOfCylinder(8).powerHP("420").build()).build());
+        listCar.add(Car.builder().name("BMW M3 2011").model("M3").generation("E92").year("2011").priceMin(15000).priceMax(52000).carTechnical(CarTechnical.builder().coupleEngine("400").cylinder("3999").nbOfCylinder(8).powerHP("420").build()).build());
         listCar.add(Car.builder().name("BMW M3 2014").model("M3").generation("F80").year("2014").priceMin(15000).priceMax(60000).carTechnical(CarTechnical.builder().coupleEngine("550").cylinder("2979").nbOfCylinder(6).powerHP("430").build()).build());
-        listCar.add( Car.builder().name("BMW M5 2001").model("M5").generation("E39").year("2001").priceMin(20000).priceMax(45000).carTechnical(CarTechnical.builder().coupleEngine("500").cylinder("4941").nbOfCylinder(8).powerHP("400").build()).build());
-        listCar.add( Car.builder().name("BMW M5 2008").model("M5").generation("E60").year("2008").priceMin(20000).priceMax(55000).carTechnical(CarTechnical.builder().coupleEngine("520").cylinder("4999").nbOfCylinder(10).powerHP("507").build()).build());
+        listCar.add(Car.builder().name("BMW M5 2001").model("M5").generation("E39").year("2001").priceMin(20000).priceMax(45000).carTechnical(CarTechnical.builder().coupleEngine("500").cylinder("4941").nbOfCylinder(8).powerHP("400").build()).build());
+        listCar.add(Car.builder().name("BMW M5 2008").model("M5").generation("E60").year("2008").priceMin(20000).priceMax(55000).carTechnical(CarTechnical.builder().coupleEngine("520").cylinder("4999").nbOfCylinder(10).powerHP("507").build()).build());
         listCar.add(Car.builder().name("BMW M5 2012").model("M5").generation("F10").year("2012").priceMin(20000).priceMax(70000).carTechnical(CarTechnical.builder().coupleEngine("680").cylinder("2979").nbOfCylinder(8).powerHP("560").build()).build());
     }
 
@@ -56,7 +56,7 @@ public class ProducerSample {
         Random ranItem = new Random();
         Car car = listCar.get(ranItem.nextInt(listCar.size()));
         Random ranThreshold = new Random();
-        int threshold = car.getPriceMin() + ranThreshold.nextInt(20000);
+        int threshold = car.getPriceMin() + ranThreshold.nextInt(10000);
         Random ranPrice = new Random();
         car.setPrice(ranPrice.nextInt(car.getPriceMax()-car.getPriceMin())+threshold);
         return car;
