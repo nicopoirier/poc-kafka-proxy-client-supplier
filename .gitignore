@@ -4,5 +4,4 @@ target
 .settings
 .project
 .classpath
-*.xml
 *.gni
