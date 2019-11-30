@@ -40,15 +40,10 @@ public class SampleKsStream {
             }
             return true;
         }).mapValues((value) -> {
-            try {
-                //simulate compute
-                TimeUnit.MILLISECONDS.sleep(20);
-            } catch (Exception e) {
-                log.error("Exception sleep");
-            }
-            Integer average = value.getPriceMax() - value.getPriceMin();
+            Integer average = value.getPriceMin()+(value.getPriceMax() - value.getPriceMin())/2;
             if(average>value.getPrice()){
                 value.setBuy(true);
+                log.info("Buy this car {}", value.toString());
             }else{
                 value.setBuy(false);
             }
@@ -76,15 +71,10 @@ public class SampleKsStream {
             }
             return true;
         }).mapValues((value) -> {
-            try {
-                //simulate compute
-                TimeUnit.MILLISECONDS.sleep(20);
-            } catch (Exception e) {
-                log.error("Exception sleep");
-            }
-            Integer average = value.getPriceMax() - value.getPriceMin();
+            Integer average = value.getPriceMin()+(value.getPriceMax() - value.getPriceMin())/2;
             if(average>value.getPrice()){
                 value.setBuy(true);
+                log.info("Buy this car {}", value.toString());
             }else{
                 value.setBuy(false);
             }
